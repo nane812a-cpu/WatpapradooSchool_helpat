@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แผนที่โรงเรียนวัดป่าประดู่</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <style>
+    body { overflow: hidden; }
+    /* Extra panel inner scroll */
+    .panel-body-inner { padding: 0; }
+    .info-panel { display: flex; flex-direction: column; }
+    .info-panel .panel-header { position: relative; }
+    .info-panel .floor-tabs   { padding: 12px 16px 10px; }
+    .info-panel .panel-body   { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .info-panel .panel-body-inner { flex: 1; overflow-y: auto; }
+    .info-panel .panel-body-inner::-webkit-scrollbar { width: 5px; }
+    .info-panel .panel-body-inner::-webkit-scrollbar-thumb { background: var(--border); border-radius:3px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ──────────────────────────────────────────────── -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+    <div class="brand-text">
+      <span class="brand-th">โรงเรียนวัดป่าประดู่</span>
+      <span class="brand-en">Wat Pa Pradu School</span>
+    </div>
+  </a>
+  <ul class="navbar-links">
+    <li><a href="index.html">🏠 หน้าหลัก</a></li>
+    <li><a href="map.html" class="active">🗺️ แผนที่</a></li>
+    <li><a href="about.html">ℹ️ เกี่ยวกับ</a></li>
+    <li><a href="developer.html">👨‍💻 ผู้พัฒนา</a></li>
+    <li><a href="../memory-helper/index.html" class="nav-link-portal">📚 Memory Helper</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="theme-toggle" title="เปลี่ยนธีม">🌙</button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 หน้าหลัก</a>
+  <a href="map.html" class="active">🗺️ แผนที่</a>
+  <a href="about.html">ℹ️ เกี่ยวกับโรงเรียน</a>
+  <a href="developer.html">👨‍💻 ผู้พัฒนา</a>
+  <a href="../memory-helper/index.html" class="mobile-link-portal">📚 Memory Helper</a>
+</div>
+
+<!-- ── Map Layout ───────────────────────────────────────────── -->
+<div class="map-page">
+
+  <!-- Sidebar -->
+  <aside class="map-sidebar" id="mapSidebar">
+    <div class="sidebar-header">
+      <h3>🗺️ แผนที่โรงเรียน</h3>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="ค้นหาห้อง, อาคาร..." autocomplete="off" />
+      </div>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+    <div class="sidebar-body" id="sidebarBody"></div>
+  </aside>
+
+  <!-- Map canvas -->
+  <div class="map-area" id="mapArea">
+
+    <!-- Sidebar toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" title="เปิด/ปิด แถบด้านข้าง">◀</button>
+
+    <!-- Zoom level indicator -->
+    <div class="zoom-level" id="zoomLevel">100%</div>
+
+    <!-- Map viewport (draggable/zoomable) -->
+    <div class="map-viewport" id="mapViewport">
+      <div class="map-image-container" id="mapImageContainer">
+        <img id="mapImg" src="images/school-map.png" alt="แผนผังโรงเรียนวัดป่าประดู่"
+             onerror="handleMapError(this)"
+             style="min-width:900px;max-width:1400px;height:auto;" />
+        <!-- Building hotspots are injected here by map.js -->
+      </div>
+    </div>
+
+    <!-- Zoom controls -->
+    <div class="map-controls">
+      <button class="map-btn" id="btnZoomIn"  title="ซูมเข้า">＋</button>
+      <button class="map-btn" id="btnZoomOut" title="ซูมออก">－</button>
+      <button class="map-btn" id="btnReset"   title="รีเซ็ต">⌂</button>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info-panel" id="infoPanel">
+      <div class="panel-header" style="background:var(--primary)">
+        <h3>อาคาร</h3>
+        <p>Building</p>
+        <button class="panel-close" id="panelClose" title="ปิด">✕</button>
+      </div>
+      <div class="floor-tabs" id="floorTabs"></div>
+      <div class="panel-body">
+        <div class="panel-body-inner" id="panelBodyInner"></div>
+      </div>
+    </div>
+
+  </div><!-- .map-area -->
+</div><!-- .map-page -->
+
+<div id="toast" class="toast"></div>
+
+<!-- Scripts -->
+<script src="data/buildings.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function handleMapError(img) {
+    // Show a styled placeholder when map image is missing
+    const container = img.parentElement;
+    img.style.display = 'none';
+    const placeholder = document.createElement('div');
+    placeholder.style.cssText = `
+      width:1100px;height:700px;
+      background:linear-gradient(135deg,#1b5e20,#2e7d32,#388e3c);
+      border-radius:12px;display:flex;align-items:center;
+      justify-content:center;flex-direction:column;gap:16px;color:#fff;
+    `;
+    placeholder.innerHTML = `
+      <div style="font-size:4rem">🏫</div>
+      <div style="font-size:1.4rem;font-weight:700">โรงเรียนวัดป่าประดู่</div>
+      <div style="font-size:0.95rem;opacity:0.8">วางไฟล์ school-map.png ในโฟลเดอร์ images/</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:600px;padding:0 20px">
+        ${BUILDINGS.map(b=>`<div style="background:${b.color}cc;border:2px solid ${b.color};border-radius:8px;padding:10px 16px;font-size:0.85rem;font-weight:600">${b.name}</div>`).join('')}
+      </div>
+    `;
+    container.appendChild(placeholder);
+    // Still build hotspots (they won't show without real image, but logic works)
+  }
+</script>
+<script src="js/map.js"></script>
+<script>
+  // Auto-open building from URL param
+  (function() {
+    const params = new URLSearchParams(location.search);
+    const bid = params.get('building');
+    if (bid) {
+      setTimeout(() => {
+        const sidebarBuilding = document.querySelector(`[data-bid="${bid}"] .sidebar-building-header`);
+        if (sidebarBuilding) sidebarBuilding.click();
+      }, 400);
+    }
+  })();
+</script>
+</body>
+</html>

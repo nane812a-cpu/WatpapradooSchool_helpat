@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ผู้พัฒนา — School Map</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+    <div class="brand-text">
+      <span class="brand-th">โรงเรียนวัดป่าประดู่</span>
+      <span class="brand-en">Wat Pa Pradu School</span>
+    </div>
+  </a>
+  <ul class="navbar-links">
+    <li><a href="index.html">🏠 หน้าหลัก</a></li>
+    <li><a href="map.html">🗺️ แผนที่</a></li>
+    <li><a href="about.html">ℹ️ เกี่ยวกับ</a></li>
+    <li><a href="developer.html" class="active">👨‍💻 ผู้พัฒนา</a></li>
+    <li><a href="../memory-helper/index.html" class="nav-link-portal">📚 Memory Helper</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="theme-toggle" title="เปลี่ยนธีม">🌙</button>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 หน้าหลัก</a>
+  <a href="map.html">🗺️ แผนที่</a>
+  <a href="about.html">ℹ️ เกี่ยวกับโรงเรียน</a>
+  <a href="developer.html" class="active">👨‍💻 ผู้พัฒนา</a>
+  <a href="../memory-helper/index.html" class="mobile-link-portal">📚 Memory Helper</a>
+</div>
+
+<!-- Hero -->
+<div class="dev-hero">
+  <div class="dev-avatar">👨‍💻</div>
+  <h1>ผู้พัฒนาระบบ</h1>
+  <p>School Map Website · โรงเรียนวัดป่าประดู่</p>
+  <div class="dev-tags">
+    <span class="dev-tag">HTML5</span>
+    <span class="dev-tag">CSS3</span>
+    <span class="dev-tag">Vanilla JavaScript</span>
+    <span class="dev-tag">Responsive Design</span>
+    <span class="dev-tag">Dark / Light Mode</span>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="section container">
+
+  <!-- Project Info -->
+  <div class="section-title">
+    <h2>เกี่ยวกับโปรเจกต์</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="card animate-up" style="max-width:760px;margin:0 auto 56px">
+    <p style="font-size:1rem;line-height:1.85;color:var(--text);margin-bottom:16px">
+      <strong>School Map</strong> คือระบบแผนที่โรงเรียนแบบโต้ตอบ สำหรับโรงเรียนวัดป่าประดู่
+      พัฒนาด้วย HTML5, CSS3 และ Vanilla JavaScript ล้วน ไม่พึ่งพา Framework ใดๆ
+    </p>
+    <p style="font-size:1rem;line-height:1.85;color:var(--text);margin-bottom:16px">
+      ผู้ใช้งานสามารถค้นหาห้องเรียน อาคาร ชั้นเรียน ได้อย่างรวดเร็ว
+      พร้อมระบบ Zoom และ Drag เหมือน Google Maps รองรับ Dark/Light Mode
+      และ Responsive Design บนทุกอุปกรณ์
+    </p>
+    <p style="font-size:1rem;line-height:1.85;color:var(--text)">
+      ข้อมูลอาคารและห้องเรียนทั้งหมดจัดเก็บใน <code style="background:var(--primary-pale);padding:2px 6px;border-radius:4px;font-size:0.9rem">data/buildings.js</code>
+      ซึ่งสามารถแก้ไขได้ง่ายโดยไม่ต้องแตะ HTML หรือ CSS
+    </p>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="section-title">
+    <h2>เทคโนโลยีที่ใช้</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="tech-stack animate-up" style="max-width:800px;margin:0 auto 56px">
+    <div class="tech-item">
+      <div class="tech-icon">🌐</div>
+      <div class="tech-name">HTML5</div>
+      <div class="tech-ver">Semantic Markup</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">🎨</div>
+      <div class="tech-name">CSS3</div>
+      <div class="tech-ver">Custom Properties</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">⚡</div>
+      <div class="tech-name">JavaScript</div>
+      <div class="tech-ver">Vanilla ES6+</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">📱</div>
+      <div class="tech-name">Responsive</div>
+      <div class="tech-ver">Mobile First</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">🌙</div>
+      <div class="tech-name">Dark Mode</div>
+      <div class="tech-ver">CSS Variables</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">🔍</div>
+      <div class="tech-name">Search</div>
+      <div class="tech-ver">Real-time Filter</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">🗺️</div>
+      <div class="tech-name">Map Engine</div>
+      <div class="tech-ver">Zoom & Drag</div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">✨</div>
+      <div class="tech-name">Animations</div>
+      <div class="tech-ver">CSS Keyframes</div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="section-title">
+    <h2>ฟีเจอร์หลัก</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="card-grid animate-up" style="max-width:900px;margin:0 auto 56px">
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">🗺️</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">แผนที่แบบโต้ตอบ</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">ลากและซูมแผนที่ได้อิสระ รองรับ Mouse Wheel, Pinch-to-Zoom บนมือถือ</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">🔍</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">ค้นหาแบบ Real-time</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">ค้นหาด้วยชื่อห้อง เลขห้อง หรือชื่ออาคาร แสดงผลทันที</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">🏫</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">ข้อมูลครบถ้วน</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">ข้อมูลทุกอาคาร ทุกชั้น ทุกห้อง พร้อมประเภทห้องและสัญลักษณ์</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">🌙</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">Dark / Light Mode</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">สลับธีมได้ บันทึกการตั้งค่าด้วย LocalStorage</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">📱</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">Responsive Design</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">รองรับทุกขนาดหน้าจอ ตั้งแต่มือถือถึงจอ Desktop</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px">✏️</div>
+      <h3 style="font-weight:700;margin-bottom:8px;color:var(--primary)">แก้ไขง่าย</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7">ข้อมูลอยู่ใน data/buildings.js แก้ไขได้โดยตรงโดยไม่ต้องแตะโค้ดอื่น</p>
+    </div>
+  </div>
+
+  <!-- File Structure -->
+  <div class="section-title">
+    <h2>โครงสร้างไฟล์</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="card animate-up" style="max-width:560px;margin:0 auto 56px;background:var(--bg-card)">
+    <pre style="font-family:monospace;font-size:0.88rem;line-height:1.8;color:var(--text);overflow-x:auto"><code>SchoolMap/
+│
+├── index.html          ← หน้าหลัก
+├── map.html            ← แผนที่แบบโต้ตอบ
+├── about.html          ← ข้อมูลโรงเรียน
+├── developer.html      ← หน้านี้
+│
+├── css/
+│   └── style.css       ← ธีม Green &amp; Gold
+│
+├── js/
+│   ├── main.js         ← Shared utilities
+│   └── map.js          ← Map engine
+│
+├── data/
+│   └── buildings.js    ← ✏️ แก้ไขข้อมูลที่นี่
+│
+└── images/
+    ├── logo.png        ← ตราโรงเรียน
+    └── school-map.png  ← ภาพแผนผัง</code></pre>
+  </div>
+
+  <!-- How to Edit -->
+  <div class="section-title">
+    <h2>วิธีแก้ไขข้อมูล</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="card animate-up" style="max-width:700px;margin:0 auto 56px">
+    <ol style="line-height:2;color:var(--text);padding-left:20px;font-size:0.95rem">
+      <li>เปิดไฟล์ <code style="background:var(--primary-pale);padding:1px 7px;border-radius:4px">data/buildings.js</code></li>
+      <li>แก้ไขข้อมูลในอาร์เรย์ <code style="background:var(--primary-pale);padding:1px 7px;border-radius:4px">BUILDINGS</code></li>
+      <li>แต่ละ building มี <strong>id, name, nameEn, color, floors</strong></li>
+      <li>แต่ละ floor มี <strong>floor (เลข), label (ข้อความ), rooms</strong></li>
+      <li>แต่ละ room มี <strong>id, number (ไม่บังคับ), name, type</strong></li>
+      <li>บันทึกไฟล์ รีเฟรชเบราว์เซอร์ — เสร็จสิ้น ✅</li>
+    </ol>
+    <div style="margin-top:20px;padding:14px;background:var(--primary-pale);border-radius:var(--radius-sm);border-left:4px solid var(--primary-light)">
+      <strong>💡 เปลี่ยนรูปแผนที่:</strong> เพียงแทนที่ไฟล์ <code>images/school-map.png</code>
+      ด้วยภาพแผนผังใหม่ ขนาดแนะนำ 1200×800 px ขึ้นไป
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>School Map</strong> · พัฒนาสำหรับโรงเรียนวัดป่าประดู่ · จังหวัดระยอง<br/>
+  <small style="opacity:0.6">HTML5 · CSS3 · Vanilla JavaScript · No frameworks</small>
+</footer>
+
+<script src="data/buildings.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

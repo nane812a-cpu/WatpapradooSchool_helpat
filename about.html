@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เกี่ยวกับโรงเรียนวัดป่าประดู่</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+    <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'" />
+    <div class="brand-text">
+      <span class="brand-th">โรงเรียนวัดป่าประดู่</span>
+      <span class="brand-en">Wat Pa Pradu School</span>
+    </div>
+  </a>
+  <ul class="navbar-links">
+    <li><a href="index.html">🏠 หน้าหลัก</a></li>
+    <li><a href="map.html">🗺️ แผนที่</a></li>
+    <li><a href="about.html" class="active">ℹ️ เกี่ยวกับ</a></li>
+    <li><a href="developer.html">👨‍💻 ผู้พัฒนา</a></li>
+    <li><a href="../memory-helper/index.html" class="nav-link-portal">📚 Memory Helper</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="theme-toggle" title="เปลี่ยนธีม">🌙</button>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 หน้าหลัก</a>
+  <a href="map.html">🗺️ แผนที่</a>
+  <a href="about.html" class="active">ℹ️ เกี่ยวกับโรงเรียน</a>
+  <a href="developer.html">👨‍💻 ผู้พัฒนา</a>
+  <a href="../memory-helper/index.html" class="mobile-link-portal">📚 Memory Helper</a>
+</div>
+
+<!-- ── About Hero ───────────────────────────────────────────── -->
+<div class="about-hero">
+  <div class="about-hero-content">
+    <img src="images/logo.png" alt="ตราโรงเรียน" class="about-logo"
+         onerror="this.style.background='#2e7d32';this.alt='WPP'" />
+    <h1>โรงเรียนวัดป่าประดู่</h1>
+    <h2>Wat Pa Pradu School</h2>
+    <div class="school-code-badge">
+      <span>🏫</span>
+      <span>รหัส OBEC: 470222 &nbsp;|&nbsp; รหัสสถานศึกษา: 1021470222</span>
+    </div>
+  </div>
+  <div class="about-tabs">
+    <button class="about-tab active" data-tab="info">📋 ข้อมูลทั่วไป</button>
+    <button class="about-tab" data-tab="history">📜 ประวัติ</button>
+    <button class="about-tab" data-tab="vision">🎯 วิสัยทัศน์</button>
+    <button class="about-tab" data-tab="buildings">🏛️ อาคาร</button>
+    <button class="about-tab" data-tab="facilities">🏋️ สิ่งอำนวยความสะดวก</button>
+    <button class="about-tab" data-tab="contact">📞 ติดต่อ</button>
+  </div>
+</div>
+
+<!-- ── Content ──────────────────────────────────────────────── -->
+<div class="about-content container">
+
+  <!-- Info tab -->
+  <div class="about-tab-content active" id="tab-info">
+    <div class="info-grid animate-up">
+      <div class="info-item">
+        <span class="info-icon">🏫</span>
+        <div>
+          <div class="info-label">ชื่อภาษาไทย</div>
+          <div class="info-value">โรงเรียนวัดป่าประดู่</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🌐</span>
+        <div>
+          <div class="info-label">ชื่อภาษาอังกฤษ</div>
+          <div class="info-value">Wat Pa Pradu School</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🔢</span>
+        <div>
+          <div class="info-label">รหัสสถานศึกษา</div>
+          <div class="info-value">1021470222</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🔢</span>
+        <div>
+          <div class="info-label">รหัส OBEC</div>
+          <div class="info-value">470222</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">📅</span>
+        <div>
+          <div class="info-label">วันที่ก่อตั้ง</div>
+          <div class="info-value">30 สิงหาคม พ.ศ. 2465</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🏛️</span>
+        <div>
+          <div class="info-label">สังกัด</div>
+          <div class="info-value">กระทรวงศึกษาธิการ</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">📚</span>
+        <div>
+          <div class="info-label">สำนักงาน</div>
+          <div class="info-value">สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🗺️</span>
+        <div>
+          <div class="info-label">เขตพื้นที่การศึกษา</div>
+          <div class="info-value">สำนักงานเขตพื้นที่การศึกษามัธยมศึกษาชลบุรี-ระยอง</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">📍</span>
+        <div>
+          <div class="info-label">ที่อยู่</div>
+          <div class="info-value">136 ถนนสุขุมวิท ตำบลท่าประดู่ อำเภอเมืองระยอง จังหวัดระยอง 21000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- School colors -->
+    <div style="margin-top:40px">
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--primary);margin-bottom:20px">🎨 สีประจำโรงเรียน</h3>
+      <div class="colors-row">
+        <div class="color-swatch" style="background:linear-gradient(135deg,#1b5e20,#2e7d32)">
+          <div class="swatch-name">🟢 สีเขียว</div>
+          <div class="swatch-meaning">ความหวัง ความเจริญงอกงาม</div>
+        </div>
+        <div class="color-swatch" style="background:linear-gradient(135deg,#f57f17,#f9a825)">
+          <div class="swatch-name">🟡 สีทอง</div>
+          <div class="swatch-meaning">ความรู้ ความเป็นเลิศ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History tab -->
+  <div class="about-tab-content" id="tab-history">
+    <div class="card animate-up" style="max-width:800px;margin:0 auto">
+      <div style="font-size:2.5rem;margin-bottom:16px">📜</div>
+      <h3 style="font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:16px">ประวัติโรงเรียนวัดป่าประดู่</h3>
+      <p style="line-height:1.9;color:var(--text);margin-bottom:14px">
+        โรงเรียนวัดป่าประดู่ เป็นโรงเรียนมัธยมศึกษาขนาดใหญ่พิเศษ ตั้งอยู่ที่ 136 ถนนสุขุมวิท
+        ตำบลท่าประดู่ อำเภอเมืองระยอง จังหวัดระยอง ก่อตั้งขึ้นเมื่อวันที่ <strong>30 สิงหาคม พ.ศ. 2465</strong>
+        โดยมีประวัติอันยาวนานกว่า 100 ปี เป็นสถาบันการศึกษาที่สำคัญของจังหวัดระยอง
+      </p>
+      <p style="line-height:1.9;color:var(--text);margin-bottom:14px">
+        โรงเรียนตั้งอยู่ในบริเวณวัดป่าประดู่ ซึ่งเป็นวัดเก่าแก่คู่เมืองระยอง
+        มีต้นประดู่ขนาดใหญ่เป็นสัญลักษณ์ประจำโรงเรียน
+      </p>
+      <p style="line-height:1.9;color:var(--text)">
+        ปัจจุบันโรงเรียนวัดป่าประดู่สังกัดสำนักงานเขตพื้นที่การศึกษามัธยมศึกษาชลบุรี-ระยอง
+        สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ
+        มีการจัดการเรียนการสอนในระดับมัธยมศึกษาตอนต้นและตอนปลาย
+      </p>
+    </div>
+  </div>
+
+  <!-- Vision tab -->
+  <div class="about-tab-content" id="tab-vision">
+    <div class="vm-grid animate-up">
+      <div class="vm-card">
+        <div class="vm-icon">🎯</div>
+        <h3>วิสัยทัศน์ (Vision)</h3>
+        <p>โรงเรียนวัดป่าประดู่มุ่งมั่นพัฒนาผู้เรียนให้มีคุณภาพตามมาตรฐานสากล
+        มีคุณธรรม จริยธรรม และดำรงชีวิตในสังคมได้อย่างมีความสุข</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">🚀</div>
+        <h3>พันธกิจ (Mission)</h3>
+        <ul>
+          <li>พัฒนาผู้เรียนให้มีความรู้และทักษะในศตวรรษที่ 21</li>
+          <li>ส่งเสริมคุณธรรม จริยธรรม และความเป็นไทย</li>
+          <li>พัฒนาครูและบุคลากรให้มีความเชี่ยวชาญ</li>
+          <li>บริหารจัดการด้วยหลักธรรมาภิบาล</li>
+          <li>สร้างความร่วมมือกับชุมชนและสังคม</li>
+        </ul>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">🌟</div>
+        <h3>คุณลักษณะอันพึงประสงค์</h3>
+        <ul>
+          <li>รักชาติ ศาสน์ กษัตริย์</li>
+          <li>ซื่อสัตย์สุจริต</li>
+          <li>มีวินัย</li>
+          <li>ใฝ่เรียนรู้</li>
+          <li>อยู่อย่างพอเพียง</li>
+          <li>มุ่งมั่นในการทำงาน</li>
+          <li>รักความเป็นไทย</li>
+          <li>มีจิตสาธารณะ</li>
+        </ul>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">🎗️</div>
+        <h3>อัตลักษณ์ของโรงเรียน</h3>
+        <p style="margin-bottom:12px"><strong>"นักเรียนวัดป่าประดู่ เป็นคนดี มีความรู้ อยู่ในสังคมได้อย่างมีความสุข"</strong></p>
+        <h3 style="margin-top:16px">เอกลักษณ์ของโรงเรียน</h3>
+        <p>"ต้นประดู่งาม สถาบันการศึกษาคุณภาพ"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buildings tab -->
+  <div class="about-tab-content" id="tab-buildings">
+    <div class="section-title" style="text-align:left;margin-bottom:28px">
+      <h2 style="font-size:1.4rem">🏛️ อาคารทั้งหมด <span id="buildingCount" style="color:var(--accent-dark)"></span></h2>
+      <div class="gold-line" style="margin:10px 0 0"></div>
+    </div>
+    <div id="aboutBuildingsGrid" class="card-grid animate-up"></div>
+  </div>
+
+  <!-- Facilities tab -->
+  <div class="about-tab-content" id="tab-facilities">
+    <div class="section-title" style="text-align:left;margin-bottom:28px">
+      <h2 style="font-size:1.4rem">🏋️ สิ่งอำนวยความสะดวกและสถานที่</h2>
+      <div class="gold-line" style="margin:10px 0 0"></div>
+    </div>
+    <div class="facilities-grid animate-up">
+      <div class="facility-item"><div class="fac-icon">📚</div><div class="fac-name">ห้องสมุดเฉลิมพระเกียรติ</div></div>
+      <div class="facility-item"><div class="fac-icon">💻</div><div class="fac-name">ห้องคอมพิวเตอร์ 6 ห้อง (IT 1-6)</div></div>
+      <div class="facility-item"><div class="fac-icon">🔬</div><div class="fac-name">ห้องวิทยาศาสตร์</div></div>
+      <div class="facility-item"><div class="fac-icon">🎵</div><div class="fac-name">ห้องดนตรีไทย & สากล</div></div>
+      <div class="facility-item"><div class="fac-icon">🎨</div><div class="fac-name">ห้องศิลปะ</div></div>
+      <div class="facility-item"><div class="fac-icon">💃</div><div class="fac-name">ห้องนาฏศิลป์</div></div>
+      <div class="facility-item"><div class="fac-icon">🏥</div><div class="fac-name">ห้องปฐมพยาบาล</div></div>
+      <div class="facility-item"><div class="fac-icon">🍽️</div><div class="fac-name">ศูนย์อาหารช่อประดู่</div></div>
+      <div class="facility-item"><div class="fac-icon">🏀</div><div class="fac-name">สนามบาสเกตบอล</div></div>
+      <div class="facility-item"><div class="fac-icon">🏸</div><div class="fac-name">สนามแบดมินตัน</div></div>
+      <div class="facility-item"><div class="fac-icon">⛺</div><div class="fac-name">ศูนย์กิจกรรมลูกเสือ</div></div>
+      <div class="facility-item"><div class="fac-icon">🌏</div><div class="fac-name">Chinese-Japanese Center</div></div>
+      <div class="facility-item"><div class="fac-icon">🇬🇧</div><div class="fac-name">MEP Resource Center</div></div>
+      <div class="facility-item"><div class="fac-icon">📡</div><div class="fac-name">ศูนย์วิทยุสื่อสาร</div></div>
+      <div class="facility-item"><div class="fac-icon">🎭</div><div class="fac-name">ห้องประชุมอเนกประสงค์</div></div>
+      <div class="facility-item"><div class="fac-icon">🌱</div><div class="fac-name">แปลงเกษตร</div></div>
+      <div class="facility-item"><div class="fac-icon">📺</div><div class="fac-name">ห้องโสตทัศนศึกษา</div></div>
+      <div class="facility-item"><div class="fac-icon">🧮</div><div class="fac-name">คลินิกคณิตศาสตร์</div></div>
+    </div>
+  </div>
+
+  <!-- Contact tab -->
+  <div class="about-tab-content" id="tab-contact">
+    <div class="contact-grid animate-up">
+      <div class="contact-card">
+        <span class="c-icon">📍</span>
+        <div>
+          <div class="c-label">ที่อยู่</div>
+          <div class="c-value">136 ถนนสุขุมวิท ตำบลท่าประดู่<br/>อำเภอเมืองระยอง จังหวัดระยอง 21000</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="c-icon">📞</span>
+        <div>
+          <div class="c-label">โทรศัพท์</div>
+          <div class="c-value"><a href="tel:038611320">038-611320</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="c-icon">📠</span>
+        <div>
+          <div class="c-label">โทรสาร (Fax)</div>
+          <div class="c-value">038-614282</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="c-icon">🏛️</span>
+        <div>
+          <div class="c-label">กระทรวง</div>
+          <div class="c-value">กระทรวงศึกษาธิการ</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="c-icon">📚</span>
+        <div>
+          <div class="c-label">สำนักงานต้นสังกัด</div>
+          <div class="c-value">สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="c-icon">🗺️</span>
+        <div>
+          <div class="c-label">เขตพื้นที่การศึกษา</div>
+          <div class="c-value">สพม.ชลบุรี-ระยอง</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.2!2d101.275!3d12.6822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDQwJzU2LjAiTiAxMDHCsDE2JzMwLjAiRQ!5e0!3m2!1sth!2sth!4v1"
+        width="100%" height="300" style="border:0;display:block" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="แผนที่ Google Maps">
+      </iframe>
+    </div>
+  </div>
+
+</div><!-- .about-content -->
+
+<footer>
+  <strong>โรงเรียนวัดป่าประดู่</strong> · 136 ถนนสุขุมวิท ต.ท่าประดู่ อ.เมืองระยอง จ.ระยอง 21000<br/>
+  โทร. <a href="tel:038611320">038-611320</a> · แฟกซ์ 038-614282
+</footer>
+
+<script src="data/buildings.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Tab switching
+  document.querySelectorAll('.about-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.about-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.about-tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      const content = document.getElementById('tab-' + tab.dataset.tab);
+      if (content) content.classList.add('active');
+    });
+  });
+
+  // Buildings in about page
+  const grid = document.getElementById('aboutBuildingsGrid');
+  const countEl = document.getElementById('buildingCount');
+  if (countEl) countEl.textContent = `(${BUILDINGS.length} อาคาร)`;
+  if (grid) {
+    BUILDINGS.forEach(b => {
+      const totalRooms = b.floors.reduce((s, f) => s + f.rooms.length, 0);
+      const card = document.createElement('div');
+      card.className = 'building-card';
+      card.innerHTML = `
+        <div class="building-card-header" style="background:${b.color}">
+          <div class="b-icon">🏫</div>
+          <div><h3>${b.name}</h3><p>${b.nameEn}</p></div>
+        </div>
+        <div class="building-card-body">
+          <div class="floor-badges">
+            ${b.floors.map(f => `<span class="floor-badge">${f.label}</span>`).join('')}
+          </div>
+          <p class="room-count">📦 ${totalRooms} ห้อง · ${b.floors.length} ชั้น</p>
+        </div>
+      `;
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => { window.location.href = `map.html?building=${b.id}`; });
+      grid.appendChild(card);
+    });
+  }
+
+});
+</script>
+</body>
+</html>
