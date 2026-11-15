@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Memory Helper – Student Task & Reminder Manager">
+  <meta name="theme-color" content="#16a34a">
+  <title>Memory Helper – ผู้ช่วยจำงานนักเรียน</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     AUTH SCREEN
+════════════════════════════════════════════════════════════════════ -->
+<div id="authScreen" style="display:none" role="main" aria-label="Authentication">
+  <div id="authFormContainer"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     APP SHELL
+════════════════════════════════════════════════════════════════════ -->
+<div id="appShell" style="display:none" role="application">
+
+  <!-- Sidebar overlay (mobile) -->
+  <div id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- Sidebar -->
+  <nav id="sidebar" aria-label="Main navigation">
+
+    <!-- Brand -->
+    <div class="sidebar-brand">
+      <span class="sidebar-brand-icon" aria-hidden="true">📚</span>
+      <div>
+        <div class="sidebar-brand-name" data-i18n="appName">Memory Helper</div>
+        <div class="sidebar-brand-tag"  data-i18n="appTagline">ผู้ช่วยจำงานนักเรียน</div>
+      </div>
+    </div>
+
+    <!-- User info -->
+    <div id="sidebarUser" aria-live="polite"></div>
+
+    <!-- Navigation links -->
+    <div class="sidebar-nav" role="menu">
+      <div class="nav-section-label">MENU</div>
+
+      <a href="#" class="nav-link" data-page="dashboard" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span data-i18n="dashboard">หน้าหลัก</span>
+      </a>
+
+      <a href="#" class="nav-link" data-page="tasks" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">📝</span>
+        <span data-i18n="myTasks">งานของฉัน</span>
+      </a>
+
+      <a href="#" class="nav-link" data-page="calendar" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">📅</span>
+        <span data-i18n="calendar">ปฏิทิน</span>
+      </a>
+
+      <a href="#" class="nav-link" data-page="notifications" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">🔔</span>
+        <span data-i18n="notifications">การแจ้งเตือน</span>
+        <span class="nav-badge notif-badge" aria-label="unread notifications" style="display:none"></span>
+      </a>
+
+      <div class="nav-section-label" style="margin-top:.5rem">TOOLS</div>
+
+      <a href="../school-map/index.html" class="nav-link" role="menuitem" target="_self">
+        <span class="nav-icon" aria-hidden="true">🗺️</span>
+        <span>School Map</span>
+      </a>
+
+      <div class="nav-section-label" style="margin-top:.5rem">ACCOUNT</div>
+
+      <a href="#" class="nav-link" data-page="profile" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">👤</span>
+        <span data-i18n="profile">โปรไฟล์</span>
+      </a>
+
+      <a href="#" class="nav-link" data-page="settings" role="menuitem">
+        <span class="nav-icon" aria-hidden="true">⚙️</span>
+        <span data-i18n="settings">ตั้งค่า</span>
+      </a>
+    </div>
+
+    <!-- Bottom actions -->
+    <div class="sidebar-bottom">
+      <button class="sidebar-bottom-btn" id="themeToggleBtn" aria-label="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel" data-i18n="darkMode">โหมดมืด</span>
+      </button>
+      <button class="sidebar-bottom-btn" id="langToggleBtn" aria-label="Switch language">
+        🇬🇧 English
+      </button>
+      <button class="sidebar-bottom-btn danger" id="logoutBtn" aria-label="Logout">
+        <span aria-hidden="true">🚪</span>
+        <span data-i18n="logout">ออกจากระบบ</span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- Main area -->
+  <div class="main-area">
+
+    <!-- Topbar -->
+    <header id="topbar" role="banner">
+      <button id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="topbar-search" role="search">
+        <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" id="globalSearch" aria-label="Search tasks"
+               data-i18n-placeholder="searchTasks"
+               placeholder="ค้นหางาน...">
+      </div>
+
+      <div class="topbar-right">
+        <button class="topbar-btn" onclick="navigateTo('notifications')" aria-label="Notifications">
+          <span aria-hidden="true">🔔</span>
+          <span class="notif-badge" style="display:none" aria-live="polite"></span>
+        </button>
+        <button class="topbar-btn" onclick="toggleTheme()" aria-label="Toggle theme" id="themeToggleBtnTop">
+          <span aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </header>
+
+
+    <!-- Page content -->
+    <main class="page-content" id="pageContent" role="main" aria-live="polite">
+
+      <section id="page-dashboard"     class="page" role="region" aria-label="Dashboard"></section>
+      <section id="page-tasks"         class="page" role="region" aria-label="My Tasks"></section>
+      <section id="page-calendar"      class="page" role="region" aria-label="Calendar"></section>
+      <section id="page-notifications" class="page" role="region" aria-label="Notifications"></section>
+      <section id="page-profile"       class="page" role="region" aria-label="Profile"></section>
+      <section id="page-settings"      class="page" role="region" aria-label="Settings"></section>
+
+    </main>
+  </div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     TASK MODAL
+════════════════════════════════════════════════════════════════════ -->
+<div id="mainModal" role="dialog" aria-modal="true" aria-hidden="true"
+     aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle"></h2>
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline danger" id="modalDeleteBtn" style="display:none;margin-right:auto">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" aria-hidden="true">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+        </svg>
+        <span data-i18n="delete">ลบ</span>
+      </button>
+      <button class="btn btn-outline" id="modalCancelBtn" data-i18n="cancel">ยกเลิก</button>
+      <button class="btn btn-primary" id="modalSaveBtn" data-i18n="save">บันทึก</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     CONFIRM DIALOG
+════════════════════════════════════════════════════════════════════ -->
+<div id="confirmModal" role="alertdialog" aria-modal="true"
+     aria-labelledby="confirmMessage">
+  <div class="confirm-box">
+    <h3 id="confirmMessage"></h3>
+    <div class="confirm-btns">
+      <button class="btn btn-danger"  id="confirmYesBtn" data-i18n="yes">ใช่</button>
+      <button class="btn btn-outline" id="confirmNoBtn"  data-i18n="no">ไม่</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     TOAST CONTAINER
+════════════════════════════════════════════════════════════════════ -->
+<div id="toastContainer" aria-live="polite" aria-atomic="false"></div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     MOBILE FAB
+════════════════════════════════════════════════════════════════════ -->
+<button id="fabAddBtn" aria-label="Add task">+</button>
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     JAVASCRIPT  –  load order matters
+════════════════════════════════════════════════════════════════════ -->
+<script src="js/translations.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/reminders.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/school.js"></script>
+<script src="js/subjects.js"></script>
+<script src="js/teachers.js"></script>
+<script src="js/homework.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
