@@ -266,38 +266,3 @@ footer strong{color:#fff}
   .section{padding:48px 16px}
   .section-sm{padding:32px 16px}
 }
-
-/* =====================================================================
-   Portal Integration — Memory Helper link in navbar and mobile menu
-   ===================================================================== */
-
-/* Desktop navbar — Memory Helper portal link */
-.navbar-links .nav-link-portal {
-  background: var(--primary);
-  color: #fff !important;
-  border-radius: 999px;
-  padding: .28rem .85rem !important;
-  font-weight: 700;
-  font-size: .82rem;
-  letter-spacing: .01em;
-  transition: background .18s, opacity .18s;
-  white-space: nowrap;
-}
-
-.navbar-links .nav-link-portal:hover {
-  background: var(--accent-dark, #15803d);
-  opacity: .92;
-}
-
-/* Mobile menu — Memory Helper portal link */
-.mobile-menu .mobile-link-portal {
-  margin-top: .25rem;
-  border-top: 1px solid var(--border);
-  padding-top: .75rem !important;
-  font-weight: 700;
-  color: var(--primary) !important;
-}
-
-.mobile-menu .mobile-link-portal:hover {
-  background: var(--primary-pale, rgba(46,125,50,.08));
-}
